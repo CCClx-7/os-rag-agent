@@ -1,0 +1,17 @@
+# ===== Python 缓存 / 虚拟环境 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+
+# ===== WorkBuddy 本地记忆（含个人信息，不提交） =====
+.workbuddy/
+
+# ===== 编辑器 / 系统文件 =====
+.DS_Store
+Thumbs.db
+*.swp
+
+# 评测产物（results.jsonl / summary.txt）默认保留，如需忽略可自行添加

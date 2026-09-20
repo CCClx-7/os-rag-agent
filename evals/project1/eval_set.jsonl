@@ -1,0 +1,30 @@
+{"id": "q01", "question": "什么是进程？进程和程序有什么区别？", "type": "in_scope", "expected": "进程是程序的一次执行过程，是资源分配和调度的基本单位；区别：程序静态/进程动态、程序可长期保存/进程有生命周期、进程并发/程序不并发、进程是资源分配单位", "source_hint": "os_ch1 进程概念/区别"}
+{"id": "q02", "question": "进程在其生命周期内有哪些基本状态？它们之间如何转换？", "type": "in_scope", "expected": "就绪、运行、阻塞三态；就绪→运行(获CPU)、运行→就绪(时间片完)、运行→阻塞(等事件)、阻塞→就绪(事件发生)", "source_hint": "os_ch1 进程状态"}
+{"id": "q03", "question": "什么是进程控制块PCB？它有什么作用？", "type": "in_scope", "expected": "PCB是系统感知和管理进程的唯一实体，保存PID、程序计数器、寄存器、状态、优先级、内存指针、打开文件列表等；创建进程建PCB，撤销回收PCB", "source_hint": "os_ch1 PCB"}
+{"id": "q04", "question": "线程和进程有什么区别？为什么引入线程？", "type": "in_scope", "expected": "线程是CPU调度最小单位，同进程内线程共享地址空间、各自有独立栈和寄存器；引入线程减少并发开销、通信高效", "source_hint": "os_ch1 线程"}
+{"id": "q05", "question": "先来先服务FCFS调度算法有什么特点？", "type": "in_scope", "expected": "按到达先后分配CPU，非抢占、公平简单，但不利于短作业，平均带权周转时间偏大", "source_hint": "os_ch2 FCFS"}
+{"id": "q06", "question": "短作业优先SJF为什么可能导致长作业饥饿？", "type": "in_scope", "expected": "优先选运行时间最短的进程，长作业可能一直等待被短作业插队而饥饿；且需预知运行时间", "source_hint": "os_ch2 SJF"}
+{"id": "q07", "question": "时间片轮转RR调度中时间片大小如何影响性能？", "type": "in_scope", "expected": "时间片过大退化为FCFS，过小则上下文切换开销过大；适中时响应快公平", "source_hint": "os_ch2 RR"}
+{"id": "q08", "question": "什么是死锁？产生死锁必须同时满足哪四个必要条件？", "type": "in_scope", "expected": "死锁是进程间因争夺资源互相等待无法推进；四条件：互斥、占有并等待、不可抢占、循环等待", "source_hint": "os_ch2 死锁"}
+{"id": "q09", "question": "处理死锁有哪些基本方法？", "type": "in_scope", "expected": "预防(破坏四条件之一)、避免(如银行家算法)、检测与解除、忽略(鸵鸟策略)", "source_hint": "os_ch2 死锁处理"}
+{"id": "q10", "question": "分页存储管理是怎么消除外部碎片的？", "type": "in_scope", "expected": "物理内存和逻辑空间都划分为固定大小的页框/页面，页表建立映射，消除外部碎片；逻辑地址=页号+页内偏移，MMU转换，TLB加速", "source_hint": "os_ch3 分页"}
+{"id": "q11", "question": "分段存储管理和分页存储管理的主要区别是什么？", "type": "in_scope", "expected": "分段按程序逻辑意义划分可变长段，便于共享与保护但产生外部碎片；分页固定大小消除外部碎片；段页式结合两者", "source_hint": "os_ch3 分段/段页式"}
+{"id": "q12", "question": "什么是虚拟内存？它基于什么原理？", "type": "in_scope", "expected": "基于局部性原理，只装入当前需要部分，其余驻留外存，缺页时调入；使可用地址空间大于物理内存", "source_hint": "os_ch3 虚拟内存"}
+{"id": "q13", "question": "常见的页面置换算法有哪些？LRU有什么优缺点？", "type": "in_scope", "expected": "OPT、FIFO(可能Belady异常)、LRU、Clock；LRU性能好但实现开销大", "source_hint": "os_ch3 页面置换"}
+{"id": "q14", "question": "什么是信号量？P操作和V操作分别做什么？", "type": "in_scope", "expected": "信号量是整型变量，只能经P/V原子操作访问；P(wait)减1，<0则阻塞；V(signal)加1，<=0则唤醒", "source_hint": "os_ch5 信号量/P-V"}
+{"id": "q15", "question": "生产者-消费者问题用哪些信号量解决？各自作用是什么？", "type": "in_scope", "expected": "mutex(初值1)互斥保护缓冲区；empty(初值=容量)和full(初值0)两个同步信号量协调读写节奏", "source_hint": "os_ch5 生产者消费者"}
+{"id": "q16", "question": "什么是临界区？解决临界区问题的四要素是什么？", "type": "in_scope", "expected": "临界区是访问共享资源的代码段；四要素：互斥、空闲让进、有限等待、让权等待", "source_hint": "os_ch5 临界区"}
+{"id": "q17", "question": "磁盘调度为什么能减少平均寻道时间？", "type": "in_scope", "expected": "磁盘访问时间中寻道时间占比最大，调度算法优化磁头移动顺序以减少寻道", "source_hint": "os_ch6 磁盘调度目标"}
+{"id": "q18", "question": "SCAN电梯算法是怎么工作的？", "type": "in_scope", "expected": "磁头从一端向另一端移动沿途服务请求，到端点后反向；比SSTF避免单向饥饿", "source_hint": "os_ch6 SCAN"}
+{"id": "q19", "question": "明天广州天气怎么样？", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q20", "question": "帮我用Python写个快速排序。", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q21", "question": "1+1等于多少？", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q22", "question": "请把这段英文操作系统定义翻译成中文。", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q23", "question": "火锅怎么做才好吃？", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q24", "question": "今天A股大盘涨了吗？", "type": "out_of_scope", "expected": "应拒答", "source_hint": "无"}
+{"id": "q25", "question": "分布式系统的Raft共识算法怎么保证一致性？", "type": "adversarial", "expected": "应拒答（课程资料未覆盖分布式共识算法）", "source_hint": "无"}
+{"id": "q26", "question": "微内核(microkernel)架构和宏内核有什么区别？", "type": "adversarial", "expected": "应拒答（课程资料未覆盖内核架构）", "source_hint": "无"}
+{"id": "q27", "question": "什么是缓存一致性cache coherence？多核处理器怎么保证？", "type": "adversarial", "expected": "应拒答（课程资料未覆盖多核缓存一致性）", "source_hint": "无"}
+{"id": "q28", "question": "讲讲进程。", "type": "vague", "expected": "覆盖进程概念、基本状态、与程序区别、PCB、线程等要点", "source_hint": "os_ch1"}
+{"id": "q29", "question": "说说内存管理都做什么。", "type": "vague", "expected": "覆盖分配与回收、地址转换、内存保护与共享、内存扩充(虚拟内存)等目标", "source_hint": "os_ch3"}
+{"id": "q30", "question": "讲讲死锁。", "type": "vague", "expected": "覆盖死锁概念、四个必要条件、处理方法", "source_hint": "os_ch2"}
