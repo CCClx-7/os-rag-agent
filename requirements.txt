@@ -1,0 +1,7 @@
+# 运行依赖（方案 C：纯 Python + SQLite FTS5 + 直连 LLM API）
+pymupdf>=1.24          # PDF 渲染（教材为图片型，需 OCR）
+# 以下仅用于“生成交付文档/报告/PPT”，非系统运行必需：
+python-docx>=1.1       # 生成 test_report.docx / division.docx
+python-pptx>=1.0       # 生成实施过程.pptx
+# 注意：Tesseract 5.4 + chi_sim 已附带于 tools/tesseract_raw/，无需 pip 安装
+# SQLite FTS5 随 Python 标准库 sqlite3 提供（需 SQLite>=3.34，已满足）
