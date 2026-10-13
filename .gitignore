@@ -1,26 +1,31 @@
 # ===== 不提交的大文件 / 可重建文件 =====
 # Tesseract OCR 引擎二进制（体积大且不应分发，README 已说明安装方式）
 tools/
-
 # OCR 原始缓存（416 页，可由 build_kb.py --force 重新生成）
 docs/pages_ocr.jsonl
-
 # Python 缓存
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-
 # 本地配置（可能含密钥，勿提交；example 版本已提交）
 agent_config.json
-
 # 临时 / 系统文件
 *.log
 .DS_Store
 Thumbs.db
-
 # ===== 安装 Tesseract 时的临时残留（可重新下载，体积大）=====
 chi_sim.traineddata
 tesseract_installer.exe
 install_code.txt
 install_err.txt
 install_log.txt
+# ===== Python 缓存 / 虚拟环境 =====
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+# ===== WorkBuddy 本地记忆（含个人信息，不提交） =====
+.workbuddy/
+# ===== 编辑器 =====
+*.swp

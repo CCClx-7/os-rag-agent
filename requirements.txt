@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 运行依赖（方案 C：纯 Python + SQLite FTS5 + 直连 LLM API）
 pymupdf>=1.24          # PDF 渲染（教材为图片型，需 OCR）
 # 以下仅用于“生成交付文档/报告/PPT”，非系统运行必需：
@@ -5,3 +6,10 @@ python-docx>=1.1       # 生成 test_report.docx / division.docx
 python-pptx>=1.0       # 生成实施过程.pptx
 # 注意：Tesseract 5.4 + chi_sim 已附带于 tools/tesseract_raw/，无需 pip 安装
 # SQLite FTS5 随 Python 标准库 sqlite3 提供（需 SQLite>=3.34，已满足）
+=======
+# 项目一：课程知识问答智能体（RAG）依赖
+# 离线基线「零第三方依赖」：纯标准库即可运行，无需安装任何包（已移除 numpy 依赖）。
+# 可选增强（检测到时自动启用，不影响离线运行）：
+# sentence-transformers>=2.2   # 语义向量，替代 TF-IDF n-gram
+# openai>=1.0                   # 真实 LLM 生成，需设置 OPENAI_API_KEY / OPENAI_BASE_URL
+>>>>>>> 0c2ca2273ffffbaac880eef4bc0d7257052f77e0
